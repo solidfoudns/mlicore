@@ -26,6 +26,13 @@
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
   <link href="{% static "css/perfect-scrollbar.css" %}" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="{%  static "css/sweetalert.css" %}" type="text/css" rel="stylesheet" media="screen,projection">
+    <style>
+
+        nav {
+        color: #fff;
+        background-color: #512da8;
+    }
+    </style>
   {% block cssadd %}
 
   {% endblock %}
@@ -129,9 +136,9 @@
               <a id="item-gastos" class="collapsible-header waves-effect waves-cyan"><i class="mdi-editor-attach-money"></i> Gastos</a>
               <div class="collapsible-body">
                 <ul>
-                  <li id="item-gasto"><a href="/cpanel/gastos/">Mis Gastos</a>
+                  <li id="item-gasto"><a href="{% url 'gastos:misGastos' %}">Mis Gastos</a>
                   </li>
-                  <li id="item-tipo_gastos"><a href="/cpanel/tipo_gastos/">Tipos de Gasto</a>
+                  <li id="item-tipo_gastos"><a href="{% url 'gastos:tipo-gasto' %}">Tipos de Gasto</a>
                   </li>
                 </ul>
               </div>
@@ -155,6 +162,20 @@
           <a href="/cpanel/empleados/" class="waves-effect waves-cyan">
             <i class="mdi-action-account-circle"></i>Empleados
           </a>
+        </li>
+          <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold">
+              <a id="item-inventario" class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Pagina web</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li id="item-articulos"><a href="{% url 'inventario:artuculo' %}">Pedidos</a></li>
+                  <li id="item-categorias"><a href="{% url 'inventario:categorias' %}">Productos</a></li>
+                  <li id="item-proveedores"><a href="{% url 'inventario:provedores' %}">Ir a la Pagina</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </li>
 
         <li class="li-hover"><div class="divider"></div></li>

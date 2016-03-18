@@ -18,9 +18,18 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', include('reportes.urls')),
+    url(r'^cpanel/', include('reportes.urls')),
     url(r'^cpanel_inventario/', include('inventatio.urls', namespace='inventario')),
     url(r'^cpanel_ventas/', include('ventas.urls', namespace='ventas')),
     url(r'^cpanel_clientes/', include('clientes.urls', namespace='clientes')),
+    url(r'^cpanel_gastos/', include('gastos.urls', namespace='gastos')),
+
+
+    #ecomerce
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
+    url(r'^cart/', include('ecomerce.cart.urls', namespace='cart')),
+    url(r'^', include('ecomerce.shop.urls', namespace='shop')),
+    url(r'^ordern/', include('ecomerce.orders.urls', namespace='orders')),
+    url(r'^payment/', include('payment.urls', namespace='payment')),
 
 ]

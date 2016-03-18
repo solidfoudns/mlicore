@@ -7,6 +7,5 @@ class Cliente(models.Model):
     telefono = models.PositiveIntegerField()
     correo = models.EmailField()
 
-
     def __str__(self):
         return self.nombre
