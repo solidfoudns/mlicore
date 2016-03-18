@@ -1,0 +1,91 @@
+/*================================================================================
+Item Name: Materialize - Material Design Admin Template
+Version: 3.1
+Author: GeeksLabs
+Author URL: http://www.themeforest.net/user/geekslabs
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.plans-container .collection .collection-item:before{
+	content: none;
+}
+.texto-titulo-tabla{
+	background-color: #7e57c2 !important;
+}
+.texto-titulo-tabla > tr> th{
+	margin: 0;
+	color: #fff;
+	font-weight: 300;
+	font-size: 1.64rem;
+	line-height: 110%;
+	margin: 1.14rem 0 0.912rem 0;
+	border-radius: 0px;
+}
+
+.texto-titulo-venta{
+	background-color: #7e57c2 !important;
+	padding: 5px;
+	margin: 0;
+	color: #fff;
+	font-weight: 300;
+	font-size: 1.64rem;
+	line-height: 110%;
+	border-radius: 0px;
+}
+
+.total-venta{
+	background-color: #b39ddb !important;
+	padding: 10px !important;
+	margin: 0;
+	color: #512da8;
+	font-size: 2rem;
+	line-height: 110%;
+	border-radius: 0px;
+}
+
+
+.busqueda-tabla{
+	background-color: #b39ddb !important;
+	border-radius:0px;
+}
+
+.color-borrar{
+	background-color: #ef5350 !important;
+}
+
+.color-editar{
+	background-color: #42a5f5 !important;
+}
+.input-field label {
+  font-size: 1.2rem;
+}
+
+.select-wrapper + label{
+	font-size: 0.8rem;
+}
+
+#panel-ventas {
+    max-height: 400px;
+    height: 370px;
+    overflow-y: scroll;
+		padding: 1rem;
+		background-color: #f2f2f2;
+}
+
+input.header-search-input:focus{
+	background-color: #d1c4e9 !important;
+	color: #ffffff !important;
+	border-radius:0px;
+}
+
+input.header-search-input{
+	color: #ffffff !important;
+	border-radius:0px;
+}
+
+.fila{
+	padding:10px 0px 10px 0px !important;
+}

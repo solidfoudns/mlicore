@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <div id="breadcrumbs-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <h5 class="breadcrumbs-title">Cliente</h5>
+        <ol class="breadcrumbs ">
+            <li><a href="/cpanel/" class="deep-purple-text">Principal</a></li>
+            <li><a href="{% url 'clientes:clientess' %}">Mis Clientes</a></li>
+            <li class="active">Cliente</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="card-panel">
+      <div class="row">
+        <form class="col s12" method="post">
+          {% csrf_token %}
+          <div class="row">
+            {{ form.as_p }}
+          <div class="row">
+            <div class="row">
+              <div class="input-field col s12">
+                <button class="btn-large waves-effect waves-light right" type="submit" name="action">Guardar
+                  <i class="mdi-content-send right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

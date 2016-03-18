@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+    <div id="breadcrumbs-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <h5 class="breadcrumbs-title">Mis Proveedores</h5>
+        <ol class="breadcrumbs ">
+          <li><a href="/cpanel/" class="deep-purple-text">Principal</a></li>
+          <li class="active">Mis Proveedores</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+
+    <sub> Proveedores 2/5</sub>
+
+    <div id="task-card" class="collection with-header">
+      <table class="bordered" >
+        <thead class="texto-titulo-tabla">
+          <tr>
+            <th>Proveedor</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>´OO</td>
+            <td class="right">
+              <a href="/cpanel/proveedor_update/14" class="btn-floating waves-effect waves-light color-editar"><i class="mdi-image-edit"></i></a>
+              <a class="btn-floating delete waves-effect waves-light color-borrar" href="/cpanel/proveedor_delete/14"><i class="mdi-action-delete"></i></a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>CAS</td>
+            <td class="right">
+              <a href="/cpanel/proveedor_update/26" class="btn-floating waves-effect waves-light color-editar"><i class="mdi-image-edit"></i></a>
+              <a class="btn-floating delete waves-effect waves-light color-borrar" href="/cpanel/proveedor_delete/26"><i class="mdi-action-delete"></i></a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Floating Action Button -->
+<div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+  <a class="btn-floating btn-large" href="/cpanel/proveedor/">
+    <i class="mdi-content-add"></i>
+  </a>
+</div>
+{% endblock %}

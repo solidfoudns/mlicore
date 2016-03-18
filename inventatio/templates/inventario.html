@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div id="breadcrumbs-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <h5 class="breadcrumbs-title">Inventario</h5>
+        <ol class="breadcrumbs ">
+          <li><a href="/cpanel/" class="deep-purple-text">Principal</a></li>
+          <li class="active">Inventario</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--start container-->
+<div class="container">
+  <div class="section">
+
+        <sub> Articulos Disponibles 0/15</sub>
+
+    <div id="task-card" class="collection with-header">
+      <div class="header-search-wrapper busqueda-tabla white-text">
+        <i class="mdi-action-search"></i>
+        <input type="search" name="buscar" id="buscar" class="header-search-input z-depth-2" placeholder="Buscar">
+      </div>
+      <table class="bordered" id="mitabla" style="border-bottom:0px">
+        <thead class="texto-titulo-tabla">
+          <tr>
+            <th class="hide-on-small-only">Codigo</th>
+            <th >Producto</th>
+            <th class="center">Existencia</th>
+            <th class="center hide-on-small-only">Precio</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td colspan="5" class="center">Sin Registros</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Floating Action Button -->
+  <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+    <a class="btn-floating btn-large" href="/cpanel/articulo/">
+      <i class="mdi-content-add"></i>
+    </a>
+  </div>
+  <!-- Floating Action Button -->
+</div>
+{% endblock %}

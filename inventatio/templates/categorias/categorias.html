@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="breadcrumbs-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <h5 class="breadcrumbs-title">Mis Categorias</h5>
+        <ol class="breadcrumbs ">
+          <li><a href="/cpanel/" class="deep-purple-text">Principal</a></li>
+          <li class="active">Mis Categorias</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+
+    <sub> Categorias Disponibles 1/5</sub>
+
+    <div id="task-card" class="collection with-header">
+      <table class="bordered" >
+        <thead class="texto-titulo-tabla">
+          <tr>
+            <th>Categoria</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>CASA</td>
+            <td class="right">
+              <a href="/cpanel/categoria_update/44" class="btn-floating waves-effect waves-light color-editar"><i class="mdi-image-edit"></i></a>
+              <a class="btn-floating delete waves-effect waves-light color-borrar" href="/cpanel/categoria_delete/44"><i class="mdi-action-delete"></i></a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Floating Action Button -->
+<div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+  <a class="btn-floating btn-large" href="/cpanel/categoria/">
+    <i class="mdi-content-add"></i>
+  </a>
+</div>
+{% endblock %}

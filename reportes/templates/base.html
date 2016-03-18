@@ -1,0 +1,322 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="description" content="Deicaru Mi Punto de Venta en la Nube">
+  <meta name="keywords" content="punto de venta,ventas,software ventas, pv,">
+  <!-- Favicons-->
+  <link rel="icon" href="http://www.deicaru.com/static/images/favicon/favicon-32x32.png" sizes="32x32">
+  <!-- Favicons-->
+  <link rel="apple-touch-icon-precomposed" href="http://www.deicaru.com/static/images/favicon/apple-icon-152x152.png">
+  <!-- For iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="http://www.deicaru.com/static/images/favicon/mstile-icon-144x144.png">
+  <title>Deicaru - Mi Punto de Ventas</title>
+  <!-- CORE CSS-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"/>
+{#  <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection">#}
+  <link href="{% static "css/style_admin.css" %}" type="text/css" rel="stylesheet" media="screen,projection">
+  <!-- Custome CSS-->
+  <link href="{% static "css/custom.css" %} " type="text/css" rel="stylesheet" media="screen,projection">
+  <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+  <link href="{% static "css/perfect-scrollbar.css" %}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{%  static "css/sweetalert.css" %}" type="text/css" rel="stylesheet" media="screen,projection">
+  {% block cssadd %}
+
+  {% endblock %}
+
+</head>
+<body>
+
+  <!-- START HEADER -->
+  <header id="header" class="page-topbar">
+    <!-- start header nav-->
+    <div class="navbar-fixed">
+      <nav class="navbar-color">
+        <div class="nav-wrapper">
+          <ul class="left">
+            <!--<li><h1 class="logo-wrapper"><a href="/cpanel/" class="brand-logo darken-1">Deicaru</a> <span class="logo-text">Materialize</span></h1></li>-->
+            <li><a href="/cpanel/" class="brand-logo darken-1" style="padding:0px 20px 0px 20px;"><img src="{% static "img/logo.png" %}" alt="logo" height="50px" width="50px"></a></li>
+          </ul>
+          <!--<div class="header-search-wrapper hide-on-med-and-down">
+          <i class="mdi-action-search"></i>
+          <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Buscar"/>
+        </div>-->
+        <!--<ul class="right hide-on-med-and-down">
+        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light notification-button" data-activates="notifications-dropdown"><i class="mdi-social-notifications"><small class="notification-badge">1</small></i></a>
+      </li>
+      <li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a>
+    </li>
+  </ul>-->
+  <!-- notifications-dropdown -->
+  <!--<ul id="notifications-dropdown" class="dropdown-content">
+  <li>
+  <h5>Notificaciones <span class="badge">1</span></h5>
+</li>
+<li class="divider"></li>
+<li>
+<a href="#!"><i class="mdi-action-add-shopping-cart"></i> Tiene una nueva notifiacion!</a>
+<time class="media-meta" datetime="2015-06-12T20:50:48+08:00">2 Horas</time>
+</li>
+</ul>-->
+</div>
+</nav>
+</div>
+<!-- end header nav-->
+</header>
+<!-- END HEADER -->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+<!-- START MAIN -->
+<div id="main">
+  <!-- START WRAPPER -->
+  <div class="wrapper">
+
+    <!-- START LEFT SIDEBAR NAV-->
+    <aside id="left-sidebar-nav">
+      <ul id="slide-out" class="side-nav fixed leftside-navigation">
+        <li class="user-details deep-purple darken-2">
+          <div class="row">
+            <div class="col col s4 m4 l4">
+
+              <img src="http://graph.facebook.com/1700481036886029/picture?type=large" class="circle responsive-img valign profile-image" >
+
+            </div>
+            <div class="col col s8 m8 l8">
+              <span class="user-roal">Marco Rm</span>
+
+              <p class="user-roal">Administrador</p>
+
+
+
+            </div>
+          </div>
+        </li>
+
+
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold">
+              <a id="item-inventario" class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Inventario</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li id="item-articulos"><a href="{% url 'inventario:artuculo' %}">Articulos</a></li>
+                  <li id="item-categorias"><a href="{% url 'inventario:categorias' %}">Categorias</a></li>
+                  <li id="item-proveedores"><a href="{% url 'inventario:provedores' %}">Proveedores</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li class="bold" id="item-ventas"><a href="{% url 'ventas:carrito' %}" class="waves-effect waves-cyan"><i class="mdi-action-shopping-cart"></i> Ventas</a>
+        </li>
+          <li class="bold" id="item-compras"><a href="{% url 'ventas:calendario' %}" class="waves-effect waves-cyan"><i class="material-icons">format_list_bulleted</i> Calendario</a>
+        </li>
+        <li class="bold" id="item-compras"><a href="/cpanel/compras/" class="waves-effect waves-cyan"><i class="mdi-action-add-shopping-cart"></i> Compras</a>
+        </li>
+        <li class="bold" id="item-clientes"><a href="{% url 'clientes:clientess' %}" class="waves-effect waves-cyan"><i class="mdi-action-assignment-ind"></i> Clientes</a>
+        </li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold">
+              <a id="item-gastos" class="collapsible-header waves-effect waves-cyan"><i class="mdi-editor-attach-money"></i> Gastos</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li id="item-gasto"><a href="/cpanel/gastos/">Mis Gastos</a>
+                  </li>
+                  <li id="item-tipo_gastos"><a href="/cpanel/tipo_gastos/">Tipos de Gasto</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold">
+              <a id="item-reportes" class="collapsible-header waves-effect waves-cyan"><i class="mdi-editor-insert-chart"></i> Reportes</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li id="item-reporte_general"><a href="/cpanel/reporte_general/">Reporte General</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li id="item-empleados" class="bold">
+          <a href="/cpanel/empleados/" class="waves-effect waves-cyan">
+            <i class="mdi-action-account-circle"></i>Empleados
+          </a>
+        </li>
+
+        <li class="li-hover"><div class="divider"></div></li>
+        <li class="li-hover"><p class="ultra-small margin more-text">MAS</p></li>
+
+        <li id="item-perfil"><a href="/cpanel/mi_cuenta/"><i class="mdi-action-face-unlock"></i> Perfil</a></li>
+        <li id="item-paquetes"><a href="/cpanel/paquetes/"><i class="mdi-action-wallet-giftcard"></i> Comprar Paquetes</a></li>
+
+        <!-- EndIf Empresas -->
+
+        <li><a href="/logout/"><i class="mdi-hardware-keyboard-tab"></i> Salir</a></li>
+        <li class="li-hover"><div class="divider"></div></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+      </ul>
+      <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only deep-purple"><i class="mdi-navigation-menu"></i></a>
+    </aside>
+    <!-- END LEFT SIDEBAR NAV-->
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- START CONTENT -->
+    <section id="content">
+
+        <!--breadcrumbs end-->
+        <!--start container-->
+        <div class="container">
+            {% block content %}
+            
+            {% endblock %}
+{#          <div class="section">#}
+{#            <div class="row hide-on-small-only">#}
+{#              <div class="col s12 m12 l12">#}
+{#                <div class="card">#}
+{#                  <div class="card-move-up waves-effect waves-block waves-light">#}
+{#                    <div class="move-up cyan darken-1">#}
+{#                      <div>#}
+{#                        <span class="chart-title white-text">Deicaru Ventas 2016</span>#}
+{#                        <div class="chart-revenue cyan darken-2 white-text">#}
+{#                          <p class="chart-revenue-total">Lunes 14 Marzo, 2016</p>#}
+{#                        </div>#}
+{#                      </div>#}
+{#                      <div class="trending-line-chart-wrapper">#}
+{#                        <canvas id="line-chart" height="145" width="622" style="width: 622px; height: 200px;"></canvas>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                  </div>#}
+{##}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#          <div id="card-stats">#}
+{#            <div class="row">#}
+{#              <div class="col s12 m6 l4">#}
+{#                <div class="card">#}
+{#                  <div class="card-content blue white-text">#}
+{#                    <p class="card-stats-title"><i class="mdi-action-shopping-cart"></i>Ventas <br>Diarias</p>#}
+{#                    <h4 class="card-stats-number">$0.00</h4>#}
+{#                    <p class="card-stats-compare">#}
+{#                    </p>#}
+{#                  </div>#}
+{#                  <div class="card-action blue darken-2">#}
+{#                    <div id="invoice-line" class="center-align"><canvas width="206" height="25" style="display: inline-block; width: 206px; height: 25px; vertical-align: top;"></canvas></div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="col s12 m6 l4">#}
+{#                <div class="card">#}
+{#                  <div class="card-content green lighten-1 white-text">#}
+{#                    <p class="card-stats-title"><i class="mdi-action-shopping-cart"></i>Ventas <br>Marzo</p>#}
+{#                    <h4 class="card-stats-number">$0.00</h4>#}
+{#                    <p class="card-stats-compare">#}
+{#                    </p>#}
+{#                  </div>#}
+{#                  <div class="card-action  green darken-2">#}
+{#                    <div id="invoice-line" class="center-align"><canvas width="206" height="25" style="display: inline-block; width: 206px; height: 25px; vertical-align: top;"></canvas></div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="col s12 m6 l4">#}
+{#                <div class="card">#}
+{#                  <div class="card-content pink white-text">#}
+{#                    <p class="card-stats-title"><i class="mdi-action-add-shopping-cart"></i>Compras <br> Marzo</p>#}
+{#                    <h4 class="card-stats-number">$0.00</h4>#}
+{#                    <p class="card-stats-compare">#}
+{##}
+{#                    </p>#}
+{#                  </div>#}
+{#                  <div class="card-action pink darken-2">#}
+{#                    <div id="profit-tristate" class="center-align"><canvas width="227" height="25" style="display: inline-block; width: 227px; height: 25px; vertical-align: top;"></canvas></div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="col s12 m6 l4">#}
+{#                <div class="card">#}
+{#                  <div class="card-content blue white-text">#}
+{#                    <p class="card-stats-title"><i class="mdi-editor-attach-money"></i>Abonos <br>Diarios</p>#}
+{#                    <h4 class="card-stats-number">$0.00</h4>#}
+{#                    <p class="card-stats-compare">#}
+{#                    </p>#}
+{#                  </div>#}
+{#                  <div class="card-action blue darken-2">#}
+{#                    <div id="invoice-line" class="center-align"><canvas width="206" height="25" style="display: inline-block; width: 206px; height: 25px; vertical-align: top;"></canvas></div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="col s12 m6 l4">#}
+{#                <div class="card">#}
+{#                  <div class="card-content green white-text">#}
+{#                    <p class="card-stats-title"><i class="mdi-editor-attach-money"></i>Abonos <br> Marzo</p>#}
+{#                    <h4 class="card-stats-number">$0.00</h4>#}
+{#                    <p class="card-stats-compare">#}
+{#                    </p>#}
+{#                  </div>#}
+{#                  <div class="card-action green darken-2">#}
+{#                    <div id="sales-compositebar" class="center-align"><canvas width="214" height="25" style="display: inline-block; width: 214px; height: 25px; vertical-align: top;"></canvas></div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="col s12 m6 l4">#}
+{#                <div class="card">#}
+{#                  <div class="card-content blue-grey white-text">#}
+{#                    <p class="card-stats-title"><i class="mdi-editor-attach-money"></i>Gastos <br> Marzo</p>#}
+{#                    <h4 class="card-stats-number">$0.00</h4>#}
+{#                    <p class="card-stats-compare">#}
+{#                    </p>#}
+{#                  </div>#}
+{#                  <div class="card-action blue-grey darken-2">#}
+{#                    <div id="sales-compositebar" class="center-align"><canvas width="214" height="25" style="display: inline-block; width: 214px; height: 25px; vertical-align: top;"></canvas></div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+        </div>
+          <!--end container-->
+    </section>
+
+</div>
+
+</div>
+
+
+<script type="text/javascript" src="{% static  "js/jquery-1.11.2.min.js" %}"></script>
+<script type="text/javascript" src="{% static  "js/materialize.min.js" %}"></script>
+<script type="text/javascript" src="{% static  "js/perfect-scrollbar.min.js" %}"></script>
+<script type="text/javascript" src="{% static  "js/plugins.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/colorea-menu.js"  %}"></script>
+<script type="text/javascript" src="{% static "js/sweetalert.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/confirm-delete.js" %}  "></script>
+<!--Validacion-->
+<script type="text/javascript" src="{% static "js/jquery.validate.min.js" %} "></script>
+<script type="text/javascript" src="{% static "js/messages_es.js"  %}"></script>
+<script type="text/javascript" src="{% static "js/formularios.js" %} "></script>
+<script type="text/javascript" src="{% static "js/chart.min.js" %} "></script>
+<script type="text/javascript" src="{% static "js/dashboard.js" %} "></script>
+  {% block jsadd %}
+
+  {% endblock %}
+
+
+</body>

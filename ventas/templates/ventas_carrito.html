@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% block content %}
+        <div class="row"></div>
+      <div class="row">
+       <div class="col s12"><h4>Disponibilidad:</h4><input type="date" class="datepicker"></div>
+      </div>
+      <div class="row">
+        <div class="col s8">
+          <ul class="tabs">
+            <li class="tab col s3"><a href="#test1">Carpas</a></li>
+            <li class="tab col s3"><a class="active" href="#test2">Mesas</a></li>
+            <li class="tab col s3 "><a href="#test3">Sillas</a></li>
+            <li class="tab col s3"><a href="#test4">Banquetes</a></li>
+            <li class="tab col s3"><a href="#test5">Salas Lounge</a></li>
+            <li class="tab col s3"><a href="#test6">Jardines</a></li>
+            <li class="tab col s3"><a href="#test7">Capillas</a></li>
+            <li class="tab col s3"><a href="#test8">Paquetes</a></li>
+          </ul>
+        </div>
+              <div id="test1" class="col s8">
+                  <table>
+                      <thead>
+                        <tr>
+                            <th data-field="id">Nombre</th>
+                            <th data-field="name">Precio</th>
+                            <th data-field="price">Disponibles</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for art in articulos %}
+                            {% if art.categoria == "Carpas" %}
+                                <tr>
+                                    <td>{{ art.nombre }}</td>
+                                    <td>{{ art.precio_venta }}</td>
+                                    <td>{{ art.cantidad }}</td>
+                                  </tr>
+                            {% endif %}
+                        {% endfor %}
+                      </tbody>
+                  </table>
+              </div>
+
+              <div id="test2" class="col s8">
+                  <table>
+                      <thead>
+                        <tr>
+                            <th data-field="id">Nombre</th>
+                            <th data-field="name">Precio</th>
+                            <th data-field="price">Disponibles</th>
+                        </tr>
+                      </thead>
+                  <tbody>
+                      {% for art in articulos %}
+                          {% if art.categoria.descripcion == "Mesas" %}
+                                      <tr>
+                                        <td>{{ art.nombre }}</td>
+                                        <td>{{ art.precio_venta }}</td>
+                                        <td>{{ art.cantidad }}</td>
+                                      </tr>
+                          {% endif %}
+                      {% endfor %}
+                     </tbody>
+                  </table>
+              </div>
+              <div id="test3" class="col s8">Test 3
+                  <table>
+                      <thead>
+                        <tr>
+                            <th data-field="id">Nombre</th>
+                            <th data-field="name">Precio</th>
+                            <th data-field="price">Disponibles</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for art in articulos %}
+                          {% if art.categoria.descripcion == "Sillas" %}
+                                      <tr>
+                                        <td>{{ art.nombre }}</td>
+                                        <td>{{ art.precio_venta }}</td>
+                                        <td>{{ art.cantidad }}</td>
+                                      </tr>
+                          {% endif %}
+                        {% endfor %}
+                     </tbody>
+                  </table>
+              </div>
+              <div id="test4" class="col s8">
+                  <table>
+                      <thead>
+                        <tr>
+                            <th data-field="id">Nombre</th>
+                            <th data-field="name">Precio</th>
+                            <th data-field="price">Disponibles</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for art in articulos %}
+                          {% if art.categoria.descripcion == "Banquetes" %}
+                                      <tr>
+                                        <td>{{ art.nombre }}</td>
+                                        <td>{{ art.precio_venta }}</td>
+                                        <td>{{ art.cantidad }}</td>
+                                      </tr>
+                          {% endif %}
+                        {% endfor %}
+                     </tbody>
+                  </table>
+              </div>
+
+              <div id="test5" class="col s8">Test 5
+                  <table>
+                      <thead>
+                        <tr>
+                            <th data-field="id">Nombre</th>
+                            <th data-field="name">Precio</th>
+                            <th data-field="price">Disponibles</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for art in articulos %}
+                          {% if art.categoria.descripcion == "Salas Lounge" %}
+                                      <tr>
+                                        <td>{{ art.nombre }}</td>
+                                        <td>{{ art.precio_venta }}</td>
+                                        <td>{{ art.cantidad }}</td>
+                                      </tr>
+                          {% endif %}
+                        {% endfor %}
+                     </tbody>
+                  </table>
+
+              </div>
+
+              <div id="test6" class="col s8">Test 6
+                  <table>
+                      <thead>
+                        <tr>
+                            <th data-field="id">Nombre</th>
+                            <th data-field="name">Precio</th>
+                            <th data-field="price">Disponibles</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for art in articulos %}
+                          {% if art.categoria.descripcion == "Jardines" %}
+                                      <tr>
+                                        <td>{{ art.nombre }}</td>
+                                        <td>{{ art.precio_venta }}</td>
+                                        <td>{{ art.cantidad }}</td>
+                                      </tr>
+                          {% endif %}
+                        {% endfor %}
+                        </tbody>
+                  </table>
+              </div>
+              <div id="test7" class="col s8">Test 7
+                  <table>
+                      <thead>
+                        <tr>
+                            <th data-field="id">Nombre</th>
+                            <th data-field="name">Precio</th>
+                            <th data-field="price">Disponibles</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for art in articulos %}
+                          {% if art.categoria.descripcion == "Capillas" %}
+                                      <tr>
+                                        <td>{{ art.nombre }}</td>
+                                        <td>{{ art.precio_venta }}</td>
+                                        <td>{{ art.cantidad }}</td>
+                                      </tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tbody>
+                  </table>
+              </div>
+              <div id="test8" class="col s8">
+                  <div class="row">
+                    <div class="col s12">
+                      <ul class="tabs">
+                        <li class="tab col s3"><a href="#testp1">100 Personas</a></li>
+                        <li class="tab col s3"><a  href="#testp2">200 Personas</a></li>
+                        <li class="tab col s3"><a href="#testp3">300 Personas</a></li>
+                        <li class="tab col s3"><a href="#testp4">400 Personas</a></li>
+                        <li class="tab col s3"><a href="#testp5">500 Personas</a></li>
+                        <li class="tab col s3"><a href="#testp6">600 Personas</a></li>
+                        <li class="tab col s3"><a href="#testp7">1000 Personas</a></li>
+                      </ul>
+                    </div>
+                    <div id="testp1" class="col s12">
+                        <section class="plans-container" id="plans">
+                            <article class="col s12 m6 l6">
+      <div class="card hoverable">
+        <div class="card-image blue waves-effect">
+          <div class="card-title">Paquete Basico 100 personas</div>
+          <div class="price"><sup>$</sup>899.00</div>
+          <div class="price-desc">Ideal para Fiestas Sencillas</div>
+        </div>
+        <div class="card-content">
+          <ul class="collection">
+
+            <li class="collection-item">100 sillas</li>
+
+            <li class="collection-item">5 Mesas Caudradas</li>
+              <li class="collection-item">1 Carpa 50x30</li>
+              <li class="collection-item">-</li>
+              <li class="collection-item">-</li>
+          </ul>
+        </div>
+        <div class="card-action center-align">
+
+          <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">-->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="amount" value="899.00">
+            <input type="hidden" name="item_name" value="Paquete Empleado">
+            <input type="hidden" name="item_number" value="2">
+            <input type="hidden" name="currency_code" value="MXN">
+            <input type="hidden" name="return" value="http://www.deicaru.com/cpanel/confirma_pago/">
+            <input type="hidden" name="cancel_return" value="http://www.deicaru.com/cpanel/paquetes/">
+            <input type="hidden" name="lc" value="MX">
+            <!--<input type="hidden" name="business" value="seis.coyotes-facilitator@gmail.com">-->
+            <input type="hidden" name="business" value="seis.coyotes@gmail.com">
+            <input type="submit" class="waves-effect waves-light  btn" value="Comprar" name="submit">
+          </form>
+        </div>
+      </div>
+    </article>
+                            <article class="col s12 m6 l6">
+      <div class="card hoverable">
+        <div class="card-image purple waves-effect">
+          <div class="card-title">Paquete elegante 100 personas</div>
+          <div class="price"><sup>$</sup>2325.00</div>
+          <div class="price-desc">Para Pequeñas con un toque elegante</div>
+        </div>
+        <div class="card-content">
+          <ul class="collection">
+
+            <li class="collection-item">100 Ventas Diarias</li>
+
+            <li class="collection-item">50 Articulos</li>
+
+            <li class="collection-item">10 Compras Diarias</li>
+
+            <li class="collection-item">-</li><li class="collection-item">-</li>
+          </ul>
+        </div>
+        <div class="card-action center-align">
+
+          <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">-->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="amount" value="2325.00">
+            <input type="hidden" name="item_name" value="Paquete Basico">
+            <input type="hidden" name="item_number" value="3">
+            <input type="hidden" name="currency_code" value="MXN">
+            <input type="hidden" name="return" value="http://www.deicaru.com/cpanel/confirma_pago/">
+            <input type="hidden" name="cancel_return" value="http://www.deicaru.com/cpanel/paquetes/">
+            <input type="hidden" name="lc" value="MX">
+            <!--<input type="hidden" name="business" value="seis.coyotes-facilitator@gmail.com">-->
+            <input type="hidden" name="business" value="seis.coyotes@gmail.com">
+            <input type="submit" class="waves-effect waves-light  btn" value="Comprar" name="submit">
+          </form>
+        </div>
+      </div>
+    </article>
+                        </section>
+                    </div>
+                    <div id="testp2" class="col s12">Test 2</div>
+                    <div id="testp3" class="col s12">Test 3</div>
+                    <div id="testp4" class="col s12">Test 4</div>
+                    <div id="testp5" class="col s12">Test 4</div>
+                    <div id="testp6" class="col s12">Test 4</div>
+                    <div id="testp7" class="col s12">Test 4</div>
+                  </div>
+              </div>
+
+      </div>
+{% endblock %}
