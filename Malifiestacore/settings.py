@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     #ecomerce
     'paypal.standard.ipn',
     'payment',
@@ -50,6 +51,13 @@ INSTALLED_APPS = [
     'ventas',
     'clientes',
     'gastos',
+
+        #api
+    'rest_framework',
+    'cors',
+    'corsheaders',
+    'api',
+
 ]
 
 MIDDLEWARE_CLASSES = [

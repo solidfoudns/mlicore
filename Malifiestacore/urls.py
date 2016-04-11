@@ -32,4 +32,6 @@ urlpatterns = [
     url(r'^ordern/', include('ecomerce.orders.urls', namespace='orders')),
     url(r'^payment/', include('payment.urls', namespace='payment')),
 
+    #api
+    url(r'api/', include('api.urls')),
 ]
